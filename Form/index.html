@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario Focus Hub</title>
+  <style>
+    @font-face {
+      font-family: 'Billie Eilish';
+      src: url('./fonts/Billie_Eilish.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'Neue';
+      src: url('./fonts/NeueHaasDisplayRoman.ttf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'Sweet';
+      src: url('./fonts/SweetSansProBold.otf') format('opentype');
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #111;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Billie Eilish', sans-serif;
+      letter-spacing: 1.5px;
+    }
+
+    h4 {
+      letter-spacing: 1.5px;
+      font-family: 'Sweet', sans-serif;
+    }
+
+    p {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 50px;
+    }
+
+    .left,
+    .right {
+      flex: 1 1 100%;
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    .left h2 {
+      font-size: 4.5em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .right {
+      padding-top: 30px;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    @media (min-width: 768px) {
+      .left {
+        max-width: 50%;
+      }
+
+      .right {
+        max-width: 40%;
+      }
+    }
+
+    .header {
+      background-color: #f4f4f4;
+      padding: 30px 40px 0 5px;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .line,
+    .footer-line {
+      flex-grow: 1;
+      height: 0.25px;
+      background-color: #000;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 1px;
+      font-size: 0.95em;
+      margin-top: 15px;
+      font-family: 'Neue', sans-serif;
+      letter-spacing: 0.75px;
+      color: #4D4D4D;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 5px;
+      margin-bottom: 25px;
+      border: none;
+      border-bottom: 1px solid #000;
+      background: transparent;
+      font-size: 1em;
+      color: #111;
+      font-family: inherit;
+    }
+
+    input::placeholder {
+      color: #888;
+      font-size: 0.95em;
+    }
+
+    input:focus {
+      outline: none;
+      border-bottom: 2px solid #001133;
+    }
+
+    button {
+      width: auto;
+      background: #001133;
+      color: white;
+      padding: 14px 24px;
+      font-size: 1em;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #000c2b;
+    }
+
+    .footer {
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+
+
+
+.logo-line-container {
+  display: flex;
+  align-items: center;
+  width: 100vw; /* ocupa todo el ancho de la pantalla */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 40px; /* ajusta según necesidad */
+  margin-left: 0;
+  padding-left: 8px; /* o 0 si lo quieres aún más pegado */
+  flex-shrink: 0;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #000;
+  margin-left: 16px; /* espacio entre logo y línea */
+  margin-right: 0;
+}
+
+
+
+    /* Dispositivos móviles pequeños */
+@media (max-width: 480px) {
+  /* .container {
+    padding: 40px 20px;
+  } */
+
+  .left h2 {
+    font-size: 2.5em;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    color:#999999
+  }
+
+  label {
+    font-size: 0.85em;
+    font-family: 'Neue', sans-serif;
+  }
+
+  input {
+    font-size: 0.95em;
+    font-family: 'Neue', sans-serif;
+  }
+
+  button {
+    width: 50%;
+    padding: 12px 20px;
+    font-size: 0.95em;
+    font-family: 'Neue', sans-serif;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .logo {
+    height: 32px;
+    padding-left: 4px;
+  }
+
+  .line {
+    margin-left: 8px;
+  }
+
+  .button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button-wrapper button {
+  width: 50%;
+  padding: 12px 20px;
+  font-size: 1em;
+  font-family: 'Neue', sans-serif;
+}
+
+}
+
+/* Teléfonos grandes y tablets pequeñas */
+@media (max-width: 767px) {
+  .left, .right {
+    max-width: 100%;
+    padding: 10px 0;
+  }
+
+  .left h2 {
+    font-size: 2.7em;
+    text-align: center;
+  }
+
+  .left p{
+    text-align: center;
+  }
+
+  button {
+    font-size: 1em;
+    
+  }
+
+    .logo-line-wrapper {
+    padding: 0 20px;
+  }
+
+  .logo {
+    height: 45px;
+    margin-right: 12px;
+  }
+
+  label {
+    font-size: 0.95em;
+    font-family: 'Neue', sans-serif;
+  }
+
+  input {
+    font-size: 0.95em;
+    font-family: 'Neue', sans-serif;
+  }
+
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <!-- <div class="logo-section">
+      <img src="logo-texto.png" alt="FOCUS Logo" class="logo">
+      <div class="line"></div>
+    </div> -->
+<div class="logo-line-container">
+  <img src="logo-texto.png" alt="Logo Focus" class="logo">
+  <div class="line"></div>
+</div>
+
+
+  </header>
+
+  <div class="container">
+    <div class="left">
+      <!-- <h4>TU CRECIMIENTO INICIA CON UNA DECISIÓN PROFESIONAL</h4> -->
+      <h2>Eleva tu Dealer<br>al siguiente nivel.</h2>
+      <p>Posicionamos tu negocio con intención, <br>estrategia y resultados reales. Esta llamada es el primer paso.</p>
+    </div>
+
+    <div class="right">
+      <h4>IMPORTANTE</h4>
+      <p>Este formulario está dirigido únicamente a propietarios o representantes autorizados de <strong>dealerships consolidados</strong>. No ofrecemos servicios para vendedores independientes.</p>
+<br>
+      <form id="focusForm">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Primer Nombre" required />
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Primer Apellido" required />
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su Número de Teléfono" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Ingrese su Email" required />
+
+        <label for="concesionario">Nombre del Concesionario</label>
+        <input type="text" id="concesionario" name="concesionario" placeholder="Ingrese el Nombre de su Concesionario" required />
+
+        <div class="button-wrapper" type="submit">
+          <button>Aplicar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("bFPG04covIpTRm0sB");
+    })();
+
+    const form = document.getElementById("focusForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_y225wfm', 'template_vpwc0z5', this)
+        .then(() => {
+          window.location.href = "https://app.focushub.one/thanks-page";
+        }, (err) => {
+          alert("Ocurrió un error: " + JSON.stringify(err));
+        });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-line"></div>
+  </footer>
+</body>
+
+</html>
